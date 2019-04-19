@@ -1,0 +1,27 @@
+; What does this script do?
+; Interactively iterate over all files with extension *file_extension*, looking for the string
+; *find_string* and replace it with *replace_with*, asking the user for permission to do so everytime.
+;
+
+; How to use this script
+; 1. Keep this file in the directory where you want the replacements to take place
+; 2. Open this file in emacs.
+; 3. With this file open in a buffer, use the command (M-x eval-buffer). Give 'y' or 'n' prompt to do the replacements.
+ 
+; Warning
+; If the updates in this code doesn't take effect, restart emacs.
+
+;(defun find_and_replace()
+
+; Customize this scrip here
+(setq *file_extension* "\.v$")
+
+(message "Interactive find and replace of strings")
+(message "My first emacs lisp")
+(dired default-directory)
+;(dired-unmark-all-files) ; TODO
+(dired-mark-files-regexp *file_extension*)
+(dired-do-query-replace-regexp "hi" "hello")
+;)
+
+;(find_and_replace())
