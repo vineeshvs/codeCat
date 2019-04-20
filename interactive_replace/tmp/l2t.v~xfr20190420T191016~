@@ -6,7 +6,7 @@
 //
 // * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER. 
 //
-// This program is free software; you can redistribute it hooraay/or modify
+// This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation; version 2 of the License.
 //
@@ -19,7 +19,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // 
-// For the avoidance of doubt, hooraay except that if any non-GPL license 
+// For the avoidance of doubt, and except that if any non-GPL license 
 // choice is available it will apply instead, Sun elects to use only 
 // the General Public License version 2 (GPLv2) at this time for any 
 // software where a choice of GPL license versions is made 
@@ -32,10 +32,10 @@
 // have any questions. 
 // 
 // ========== Copyright Header End ============================================
-`//include "libs/clk/rtl/clkgen_l5t_cmp.v"
-`//include "libs/clk/n2_clk_clstr_hdr_cust_l/n2_clk_clstr_hdr_cust/rtl/n2_clk_clstr_hdr_cust.v"
-`//include "libs/cl/cl_u1/cl_u1.v"
-`//include "libs/cl/cl_sc1/cl_sc1.v"
+`include "libs/clk/rtl/clkgen_l5t_cmp.v"
+`include "libs/clk/n2_clk_clstr_hdr_cust_l/n2_clk_clstr_hdr_cust/rtl/n2_clk_clstr_hdr_cust.v"
+`include "libs/cl/cl_u1/cl_u1.v"
+`include "libs/cl/cl_sc1/cl_sc1.v"
 `define SYSCLK_PERIOD   5000
 
 
@@ -326,15 +326,15 @@
 `define SPI_CSR          8'hff
 
 
-//Cache Crossbar Width hooraay Field Defines
+//Cache Crossbar Width and Field Defines
 //======================================
-`define	PCX_WIDTH	130  //PCX payload packet width , BS hooraay SR 11/12/03 N2 Xbar Packet format change
-`define	PCX_WIDTH_LESS1	129  //PCX payload packet width , BS hooraay SR 11/12/03 N2 Xbar Packet format change
-`define	CPX_WIDTH	146  //CPX payload packet width, BS hooraay SR 11/12/03 N2 Xbar Packet format change
-`define	CPX_WIDTH_LESS1	145  //CPX payload packet width, BS hooraay SR 11/12/03 N2 Xbar Packet format change
+`define	PCX_WIDTH	130  //PCX payload packet width , BS and SR 11/12/03 N2 Xbar Packet format change
+`define	PCX_WIDTH_LESS1	129  //PCX payload packet width , BS and SR 11/12/03 N2 Xbar Packet format change
+`define	CPX_WIDTH	146  //CPX payload packet width, BS and SR 11/12/03 N2 Xbar Packet format change
+`define	CPX_WIDTH_LESS1	145  //CPX payload packet width, BS and SR 11/12/03 N2 Xbar Packet format change
 `define	CPX_WIDTH11	134 
 //`define	CPX_WIDTH11c	134c
-//`define	CPX_WIDTHc	146c  //CPX payload packet width , BS hooraay SR 11/12/03 N2 Xbar Packet format change
+//`define	CPX_WIDTHc	146c  //CPX payload packet width , BS and SR 11/12/03 N2 Xbar Packet format change
 
 `define PCX_VLD         123  //PCX packet valid 
 `define PCX_RQ_HI       122  //PCX request type field 
@@ -414,7 +414,7 @@
 `define CPX_DA_LO         0
 
 `define	LOAD_RQ		5'b00000
-`define MMU_RQ          5'b01000 // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+`define MMU_RQ          5'b01000 // BS and SR 11/12/03 N2 Xbar Packet format change
 `define	IMISS_RQ	5'b10000
 `define	STORE_RQ	5'b00001
 `define	CAS1_RQ		5'b00010
@@ -516,7 +516,7 @@
 `define L2_BSC_CTAG_HI  11
 `define L2_BSC_CTAG_LO   0
 
-// Enet Egress Commhooraay Unit
+// Enet Egress Command Unit
 `define EECU_REQ_BUS    44
 `define EECU_REQ_SZ     44
 `define EECU_R_QID_HI   43
@@ -899,7 +899,7 @@
 // CIOP UCB Bus Width
 // ==================
 //
-`define IOB_EECU_WIDTH       16  // ethernet egress commhooraay
+`define IOB_EECU_WIDTH       16  // ethernet egress command
 `define EECU_IOB_WIDTH       16
 
 `define IOB_NRAM_WIDTH       16  // NRAM (RLDRAM previously)
@@ -1114,9 +1114,9 @@
 //`define	TAG_WIDTH6c	22c
 
 
-`define	MBD_WIDTH	106    // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+`define	MBD_WIDTH	106    // BS and SR 11/12/03 N2 Xbar Packet format change
 
-// BS hooraay SR 11/12/03 N2 Xbar Packet format change
+// BS and SR 11/12/03 N2 Xbar Packet format change
 
 `define	MBD_ECC_HI	105
 `define	MBD_ECC_HI_PLUS1	106
@@ -1148,7 +1148,7 @@
 `define	MBD_DATA_HI	63
 `define	MBD_DATA_LO	0
 
-// BS hooraay SR 11/12/03 N2 Xbar Packet format change
+// BS and SR 11/12/03 N2 Xbar Packet format change
 `define	L2_FBF		40
 `define	L2_MBF		39
 `define	L2_SNP		38
@@ -1162,7 +1162,7 @@
 `define	L2_POISON	28
 `define	L2_RDMA_HI	27
 `define	L2_RDMA_LO	26
-// BS hooraay SR 11/12/03 N2 Xbar Packet format change , maps to bits [128:104] of PCXS packet , ther than RSVD bit
+// BS and SR 11/12/03 N2 Xbar Packet format change , maps to bits [128:104] of PCXS packet , ther than RSVD bit
 `define	L2_RQTYP_HI	25
 `define	L2_RQTYP_LO	21
 `define	L2_NC		20
@@ -1220,10 +1220,10 @@
 `define ERR_NDADR_LO    4
 
 
-//  Phase 2 : SIU Inteface hooraay format change
+//  Phase 2 : SIU Inteface and format change
 
-`define	JBI_HDR_SZ	26 // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-`define	JBI_HDR_SZ_LESS1	25 // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+`define	JBI_HDR_SZ	26 // BS and SR 11/12/03 N2 Xbar Packet format change
+`define	JBI_HDR_SZ_LESS1	25 // BS and SR 11/12/03 N2 Xbar Packet format change
 `define	JBI_HDR_SZ4     23	
 //`define	JBI_HDR_SZc	27c
 //`define	JBI_HDR_SZ4c    23c	
@@ -1244,8 +1244,8 @@
 `define	JBI_ENTRY_LO	32
 `define	JBI_ENTRY_HI	33
 
-//  Phase 2 : SIU Inteface hooraay format change
-// BS hooraay SR 11/12/03 N2 Xbar Packet format change :
+//  Phase 2 : SIU Inteface and format change
+// BS and SR 11/12/03 N2 Xbar Packet format change :
 `define	JBINST_SZ_LO	0	
 `define	JBINST_SZ_HI	7	
 // `define	JBINST_RSVD	8 NOT used	
@@ -1915,12 +1915,12 @@ wire l5t_mb0_oqarray_rd_en;
 wire l5tag_sram_hdr_scanin;
 wire l5tag_sram_hdr_scanout;
 wire rdmat_scanin;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel0;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel1;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel2;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel3;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel4;
-wire vuad_usaloc_mux_used_hooraay_alloc_comb_sel5;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel0;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel1;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel2;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel3;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel4;
+wire vuad_usaloc_mux_used_and_alloc_comb_sel5;
 wire mux_valid_dirty_c1_sel0;
 wire mux_valid_dirty_c1_sel1;
 wire mux_valid_dirty_c1_sel2;
@@ -1982,11 +1982,11 @@ input	[7:0]	cpx_l5t_grant_cx; //
 //////////////////////////////////////////////////////////////////////////////
 
 input           ncu_l5t_pm;   // 0:all 8 banks available, 1:partial mode 
-			      //hooraay need to look at each *ba* signals)
-input		ncu_l5t_ba01; // 0:bank0 hooraay bank1 unavailable, 1:both banks available 
-input           ncu_l5t_ba23; // 0:bank2 hooraay bank3 unavailable, 1:both banks available
-input           ncu_l5t_ba45; // 0:bank4 hooraay bank5 unavailable, 1:both banks available
-input           ncu_l5t_ba67; // 0:bank6 hooraay bank7 unavailable, 1:both banks available
+			      //and need to look at each *ba* signals)
+input		ncu_l5t_ba01; // 0:bank0 and bank1 unavailable, 1:both banks available 
+input           ncu_l5t_ba23; // 0:bank2 and bank3 unavailable, 1:both banks available
+input           ncu_l5t_ba45; // 0:bank4 and bank5 unavailable, 1:both banks available
+input           ncu_l5t_ba67; // 0:bank6 and bank7 unavailable, 1:both banks available
 
 input           ncu_spc0_core_enable_status; // 0 : spc0 unavailable, 1 : available
 input           ncu_spc1_core_enable_status; // 0 : spc1 unavailable, 1 : available
@@ -2036,7 +2036,7 @@ output          l5t_l2b_evict_en_r0;// From wbuf of l5t_wbuf_ctl.sv //
 input		l2b_l5t_ev_uerr_r5; // 
 input		l2b_l5t_ev_cerr_r5; // 
  
-// START interface with l2b for hhooraayling rdma  reads hooraay writes 
+// START interface with l2b for handling rdma  reads and writes 
 
 output	[15:0]	l5t_l2b_rdma_wren_s2; // may be all 1s // 
 output	[1:0]	l5t_l2b_rdma_wrwl_s2; // 
@@ -2050,7 +2050,7 @@ output  [31:0]  l5t_l2b_ctag_c7 ;    //
 output	[3:0]	l5t_l2b_word_c7 ; // // 
 output		l5t_l2b_req_en_c7 ;	// This signal is s one cycle pulse // 
 output		l5t_l2b_word_vld_c7; // This signal is high for 16 signals. // 
-output		l5t_rst_fatal_error; // Fatal error to rst block on LVU hooraay LRU
+output		l5t_rst_fatal_error; // Fatal error to rst block on LVU and LRU
  
 input		l2b_l5t_rdma_uerr_c10; // 
 input		l2b_l5t_rdma_cerr_c10; // 
@@ -2233,20 +2233,20 @@ wire   [1:0] arbadr_arbdp_addr87_c2;        // BS 03/25/04 for partial bank/core
 
 wire 	arb_upper_four_byte_access_c1; // BS 05/04/04 : taking out upper_four_byte_access info to word_en_c2[15:0] gen logic in tag_ctl
 wire	arb_lower_four_byte_access_c1; // BS 05/04/04 : taking out upper_four_byte_access info to word_en_c2[15:0] gen logic in tag_ctl
-wire  [7:0]	 st_ack_bmask; // BS hooraay SR 1/30/04,Bmask for store ack including Diagnostic store ack
-wire  [3:0]      filbuf_tag_evict_way_c3; // BS hooraay SR 12/18/03, LRU way from Filbuf needs to be written to Dir on a Miss
-wire            tag_store_inst_c3; //BS hooraay SR 11/07/03, store pipelining support 
-wire		misbuf_hit_st_dep_zero; //BS hooraay SR 11/07/03, store pipelining support
-wire		sel_st_ack_c7;  // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-wire		arbadr_dirvec_addr3_c7; // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-wire  [63:0]    st_ack_data; // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-                                                // BS hooraay SR 12/22/03, store ack generation for diagnostic store
-wire            sel_diag_store_data_c7;  // BS hooraay SR 12/22/03, store ack generation for diagnostic store
-wire 		tag_inval_req_c5; // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-wire		arb_decdp_mmuld_inst_c6; // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-wire		oqu_mmu_ld_hit_c7; // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+wire  [7:0]	 st_ack_bmask; // BS and SR 1/30/04,Bmask for store ack including Diagnostic store ack
+wire  [3:0]      filbuf_tag_evict_way_c3; // BS and SR 12/18/03, LRU way from Filbuf needs to be written to Dir on a Miss
+wire            tag_store_inst_c3; //BS and SR 11/07/03, store pipelining support 
+wire		misbuf_hit_st_dep_zero; //BS and SR 11/07/03, store pipelining support
+wire		sel_st_ack_c7;  // BS and SR 11/12/03 N2 Xbar Packet format change
+wire		arbadr_dirvec_addr3_c7; // BS and SR 11/12/03 N2 Xbar Packet format change
+wire  [63:0]    st_ack_data; // BS and SR 11/12/03 N2 Xbar Packet format change
+                                                // BS and SR 12/22/03, store ack generation for diagnostic store
+wire            sel_diag_store_data_c7;  // BS and SR 12/22/03, store ack generation for diagnostic store
+wire 		tag_inval_req_c5; // BS and SR 11/12/03 N2 Xbar Packet format change
+wire		arb_decdp_mmuld_inst_c6; // BS and SR 11/12/03 N2 Xbar Packet format change
+wire		oqu_mmu_ld_hit_c7; // BS and SR 11/12/03 N2 Xbar Packet format change
 
-wire  [3:0]     tag_dir_l2way_sel_c4; // BS hooraay SR 11/18/03 Reverse Directory change
+wire  [3:0]     tag_dir_l2way_sel_c4; // BS and SR 11/18/03 Reverse Directory change
 
 wire [3:0]      ic_cam_en_row0;         // To ic_row0 of dcm_row.v 
 wire [3:0]      ic_cam_en_row2;         // To ic_row2 of dcm_row.v 
@@ -2265,7 +2265,7 @@ wire	[38:0]	arbdata_wr_data_c2 ;
 wire 	[38:0]  vuad_diag_data_c7;    
 wire    [38:0]  tagdp_vuad_dp_diag_data_c7_buf;
  
-// BS hooraay SR VUAD ECC Change 8/9/04
+// BS and SR VUAD ECC Change 8/9/04
 
 wire	[77:0] write_data; 	
 wire		usaloc_ua_ue_c2;
@@ -2317,7 +2317,7 @@ wire [3:0]            oqarray_wr_ptr;         //
 wire	[39:0] rdma_read_data; 
 wire [39:0]            wb_read_data;           // To arbadr of l5t_arbadr_dp.sv 
  
-wire [7:0]             fb_cam_match;           // To filbuf of l5t_filbuf_ctl.sv // BS hooraay SR 8 deep change 3/3/04
+wire [7:0]             fb_cam_match;           // To filbuf of l5t_filbuf_ctl.sv // BS and SR 8 deep change 3/3/04
 wire [39:0]            fb_read_data;           // To arbadr of l5t_arbadr_dp.sv 
  
 wire [159:0]           iq_array_rd_data_c1;    // To ique of l5t_ique_dp.sv 
@@ -2325,13 +2325,13 @@ wire [31:0]            mb_cam_match;           // To misbuf of l5t_misbuf_ctl.sv
 wire [31:0]            mb_cam_match_idx;           // To misbuf of l5t_misbuf_ctl.sv, BS & SR 11/05/03 MB grows to 32
  
 wire [41:0]            mb_read_data;           // To l5t_evctag_dp.sv
-wire [39:0]            evctag_mb_read_data;    // from l5t_evctag_dp.sv to  fbtag hooraay mbist module 
+wire [39:0]            evctag_mb_read_data;    // from l5t_evctag_dp.sv to  fbtag and mbist module 
 
 wire [159:0]  oq_array_data_out;      // To oque of l5t_oque_dp.sv 
  
-wire [7:0]             wb_cam_match_c2;        // To wbuf of l5t_wbuf_ctl.sv // BS hooraay SR 8 deep change 3/3/04
+wire [7:0]             wb_cam_match_c2;        // To wbuf of l5t_wbuf_ctl.sv // BS and SR 8 deep change 3/3/04
 // wire [31:0]            wr_data;                // To icdir of l5t_dirblock.v, ... 
-wire	[7:0]	rdmat_cam_match_c2; 	// BS hooraay SR 8 deep change 3/3/04
+wire	[7:0]	rdmat_cam_match_c2; 	// BS and SR 8 deep change 3/3/04
 wire	[3:0]	rdmat_wr_wl_s2; 
 wire	[39:6]	rdmatag_wr_addr_s2; 
 wire		rdmatag_wr_en_s2; 
@@ -2352,7 +2352,7 @@ wire	mbist_l2data_fail;
 
 wire [2:0]              lkup_row_addr_icd_c3;   //  
 wire [2:0]              lkup_row_addr_dcd_c3;   //  
-wire [17:9]          	tagd_lkup_addr_c4;     // From tagd of l5t_tagd_dp.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [17:9]          	tagd_lkup_addr_c4;     // From tagd of l5t_tagd_dp.sv, BS and SR 11/18/03 Reverse Directory change 
 wire [41:0]           mb_write_addr;          //  
 wire [39:7]           lkup_addr_c1;           //  
  
@@ -2442,7 +2442,7 @@ wire                    arb_wbuf_hit_off_c1;// From arb of l5t_arb_ctl.sv
 wire                    arb_wbuf_inst_vld_c2;// From arb of l5t_arb_ctl.sv 
 wire [4:0]              arb_wr_dc_dir_entry_c3;// From arb of l5t_arb_ctl.sv 
 wire [4:0]              arb_wr_ic_dir_entry_c3;// From arb of l5t_arb_ctl.sv 
-wire [31:0]             arbdec_ctag_c6;         // From arbdec of l5t_arbdec_dp.sv// Phase 2 : SIU inteface hooraay packet format change 2/7/04
+wire [31:0]             arbdec_ctag_c6;         // From arbdec of l5t_arbdec_dp.sv// Phase 2 : SIU inteface and packet format change 2/7/04
 wire [7:0]              arbadr_arbdp_addr11to4_c3;     // From arbadr of l5t_arbadr_dp.sv 
 wire                    arbadr_arbdp_addr22_c7;        // From arbadr of l5t_arbadr_dp.sv 
 wire [1:0]              arbadr_arbdp_addr3to2_c1;      // From arbadr of l5t_arbadr_dp.sv 
@@ -2478,9 +2478,9 @@ wire [`L2_RQTYP_HI:`L2_RQTYP_LO]arbdec_arbdp_inst_rqtyp_c2;// From arbdec of l5t
 wire [`L2_RQTYP_HI:`L2_RQTYP_LO]arbdec_arbdp_inst_rqtyp_c6;// From arbdec of l5t_arbdec_dp.sv 
 //wire                    arbdec_arbdp_inst_rsvd_c1;     // From arbdec of l5t_arbdec_dp.sv 
 wire [`L2_SZ_HI:`L2_SZ_LO]arbdec_arbdp_inst_size_c1;   // From arbdec of l5t_arbdec_dp.sv 
-wire [7:0]              arbdec_arbdp_inst_size_c7;     // From arbdec of l5t_arbdec_dp.sv, BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+wire [7:0]              arbdec_arbdp_inst_size_c7;     // From arbdec of l5t_arbdec_dp.sv, BS and SR 11/12/03 N2 Xbar Packet format change 
 wire                    arbdec_arbdp_inst_tecc_c3;     // From arbdec of l5t_arbdec_dp.sv 
-wire [2:0]              arbdec_arbdp_inst_tid_c7;      // From arbdec of l5t_arbdec_dp.sv, BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+wire [2:0]              arbdec_arbdp_inst_tid_c7;      // From arbdec of l5t_arbdec_dp.sv, BS and SR 11/12/03 N2 Xbar Packet format change 
 wire [3:0]              arbdec_arbdp_inst_way_c1;      // From arbdec of l5t_arbdec_dp.sv 
 wire [3:0]              arbdec_arbdp_inst_way_c2;      // From arbdec of l5t_arbdec_dp.sv 
 wire [3:0]              arbdec_arbdp_inst_way_c3;      // From arbdec of l5t_arbdec_dp.sv 
@@ -2560,24 +2560,24 @@ wire [7:0]              dc_inv_mask_89cd;       // From dc_ctl_89cd of l5t_dir_c
 wire [7:0]              dc_inv_mask_abef;       // From dc_ctl_abef of l5t_dir_ctl.sv 
 wire [3:0]              dirrep_dc_lkup_panel_dec_c4;   // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dc_lkup_row_dec_c4;     // From dirrep of l5t_dirrep_ctl.sv 
-wire [15:0]             dc_lkup_wr_data_c4_row0;// From dc_buf_row0 of l5t_dirlbf_dp.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_lkup_wr_data_c4_row2;// From dc_buf_row1 of l5t_dirlbf_dp.sv , BS hooraay SR 11/18/03 Reverse Directory change
+wire [15:0]             dc_lkup_wr_data_c4_row0;// From dc_buf_row0 of l5t_dirlbf_dp.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_lkup_wr_data_c4_row2;// From dc_buf_row1 of l5t_dirlbf_dp.sv , BS and SR 11/18/03 Reverse Directory change
 wire [2:0]              dc_parity_in;           // From dc_out_col0 of l5t_dirout_dp.sv, ... 
 wire [3:0]              dc_parity_out;          // From dc_out_col3 of l5t_dirout_dp.sv, ... 
-wire [15:0]             dc_rd_data04_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_rd_data15_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_rd_data26_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_rd_data37_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_rd_data8c_row2;      // From dc_row2 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             dc_rd_data9d_row2;      // From dc_row2 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data04_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data15_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data26_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data37_row0;      // From dc_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data8c_row2;      // From dc_row2 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             dc_rd_data9d_row2;      // From dc_row2 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
 wire [15:0]             dc_rd_dataae_row2;      // From dc_row2 of lib_r_dcm_cust.sv 
 wire [15:0]             dc_rd_databf_row2;      // From dc_row2 of lib_r_dcm_cust.sv 
 wire                    dirrep_dc_rd_en_c4;     // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dirrep_dc_rdwr_panel_dec_c4; // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dirrep_dc_rdwr_row_en_c4;    // From dirrep of l5t_dirrep_ctl.sv 
-wire [5:0]              dc_rw_addr_0145;        // From dc_ctl_0145 of l5t_dir_ctl.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [5:0]              dc_rw_addr_89cd;        // From dc_ctl_89cd of l5t_dir_ctl.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [4:0]              dc_rw_addr_abef;        // From dc_ctl_abef of l5t_dir_ctl.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [5:0]              dc_rw_addr_0145;        // From dc_ctl_0145 of l5t_dir_ctl.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [5:0]              dc_rw_addr_89cd;        // From dc_ctl_89cd of l5t_dir_ctl.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [4:0]              dc_rw_addr_abef;        // From dc_ctl_abef of l5t_dir_ctl.sv, BS and SR 11/18/03 Reverse Directory change 
 wire                    dc_warm_rst_0145;       // From dc_ctl_0145 of l5t_dir_ctl.sv 
 wire                    dc_warm_rst_89cd;       // From dc_ctl_89cd of l5t_dir_ctl.sv 
 //wire                    dc_warm_rst_abef;       // From dc_ctl_abef of l5t_dir_ctl.sv 
@@ -2628,7 +2628,7 @@ wire                    dirrep_dir_error_c8;           // From dirrep of l5t_dir
 wire                    dirrep_dir_vld_c4_l;           // From dirrep of l5t_dirrep_ctl.sv 
 wire [111:0]            dirvec_dirdp_inval_pckt_c7;    // From dirvec of l5t_dirvec_dp.sv 
 wire [7:0]              dirvec_dirdp_req_vec_c6;       // From dirvec of l5t_dirvec_dp.sv 
-wire [3:0]              dirvec_dirdp_way_info_c7;      // From dirvec of l5t_dirvec_dp.sv, BS hooraay SR 11/18/03 Support for 8 way I$ 
+wire [3:0]              dirvec_dirdp_way_info_c7;      // From dirvec of l5t_dirvec_dp.sv, BS and SR 11/18/03 Support for 8 way I$ 
 wire                    vlddir_dirty_evict_c3;         // From vlddir of l5t_vlddir_dp.sv 
 wire                    filbuf_mcu_scb_mecc_err_d1;   // From filbuf of l5t_filbuf_ctl.sv 
 wire                    filbuf_mcu_scb_secc_err_d1;   // From filbuf of l5t_filbuf_ctl.sv 
@@ -2686,23 +2686,23 @@ wire [7:0]              ic_inv_mask_89cd;       // From ic_ctl_89cd of l5t_dir_c
 wire [7:0]              ic_inv_mask_abef;       // From ic_ctl_abef of l5t_dir_ctl.sv 
 wire [3:0]              dirrep_ic_lkup_panel_dec_c4;   // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dirrep_ic_lkup_row_dec_c4;     // From dirrep of l5t_dirrep_ctl.sv 
-wire [15:0]             ic_lkup_wr_data_c4_row0;// From ic_buf_row0 of l5t_dirlbf_dp.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_lkup_wr_data_c4_row2;// From ic_buf_row1 of l5t_dirlbf_dp.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_lkup_wr_data_c4_row0;// From ic_buf_row0 of l5t_dirlbf_dp.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_lkup_wr_data_c4_row2;// From ic_buf_row1 of l5t_dirlbf_dp.sv, BS and SR 11/18/03 Reverse Directory change 
 wire [2:0]              ic_parity_in;           // From out_col0 of l5t_dirout_dp.sv, ... 
 wire [3:0]              ic_parity_out;          // From out_col3 of l5t_dirout_dp.sv, ... 
-wire [15:0]             ic_rd_data04_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_rd_data15_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_rd_data26_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_rd_data37_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_rd_data8c_row1;      // From ic_row2 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
-wire [15:0]             ic_rd_data9d_row1;      // From ic_row2 of lib_r_dcm_cust.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data04_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data15_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data26_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data37_row0;      // From ic_row0 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data8c_row1;      // From ic_row2 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
+wire [15:0]             ic_rd_data9d_row1;      // From ic_row2 of lib_r_dcm_cust.sv, BS and SR 11/18/03 Reverse Directory change 
 wire                    dirrep_ic_rd_en_c4;            // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dirrep_ic_rdwr_panel_dec_c4;   // From dirrep of l5t_dirrep_ctl.sv 
 wire [3:0]              dirrep_ic_rdwr_row_en_c4;      // From dirrep of l5t_dirrep_ctl.sv 
-wire [5:0]              ic_rw_addr_0145;        // From ic_ctl_0145 of l5t_dir_ctl.sv , BS hooraay SR 11/18/03 Reverse Directory change
-wire [5:0]              ic_rw_addr_2367;        // From ic_ctl_2367 of l5t_dir_ctl.sv , BS hooraay SR 11/18/03 Reverse Directory change
-wire [5:0]              ic_rw_addr_89cd;        // From ic_ctl_89cd of l5t_dir_ctl.sv , BS hooraay SR 11/18/03 Reverse Directory change
-wire [5:0]              ic_rw_addr_abef;        // From ic_ctl_abef of l5t_dir_ctl.sv , BS hooraay SR 11/18/03 Reverse Directory change
+wire [5:0]              ic_rw_addr_0145;        // From ic_ctl_0145 of l5t_dir_ctl.sv , BS and SR 11/18/03 Reverse Directory change
+wire [5:0]              ic_rw_addr_2367;        // From ic_ctl_2367 of l5t_dir_ctl.sv , BS and SR 11/18/03 Reverse Directory change
+wire [5:0]              ic_rw_addr_89cd;        // From ic_ctl_89cd of l5t_dir_ctl.sv , BS and SR 11/18/03 Reverse Directory change
+wire [5:0]              ic_rw_addr_abef;        // From ic_ctl_abef of l5t_dir_ctl.sv , BS and SR 11/18/03 Reverse Directory change
 wire                    ic_warm_rst_0145;       // From ic_ctl_0145 of l5t_dir_ctl.sv 
 wire                    ic_warm_rst_89cd;       // From ic_ctl_89cd of l5t_dir_ctl.sv 
 wire                    dirrep_ic_wr_en_c4;            // From dirrep of l5t_dirrep_ctl.sv 
@@ -2719,7 +2719,7 @@ wire                    ique_iq_arb_vbit_px2;     // From ique of l5t_ique_dp.sv
 wire                    iqu_iq_arb_vld_px2;      // From iqu of l5t_iqu_ctl.sv 
 wire [39:0]             ique_iq_arbdp_addr_px2;      // From ique of l5t_ique_dp.sv 
 wire [63:0]             ique_iq_arbdp_data_px2;      // From ique of l5t_ique_dp.sv 
-wire [24:0]             ique_iq_arbdp_inst_px2;      // From ique of l5t_ique_dp.sv // BS hooraay SR 11/12/03 N2 Xbar Packet format
+wire [24:0]             ique_iq_arbdp_inst_px2;      // From ique of l5t_ique_dp.sv // BS and SR 11/12/03 N2 Xbar Packet format
 wire                    iqu_sel_c1;           // From iqu of l5t_iqu_ctl.sv 
 wire                    iqu_sel_pcx;          // From iqu of l5t_iqu_ctl.sv 
 //wire                    rdmat_sii_req_vld_buf;        // From rdmat of l5t_rdmat_ctl.sv 
@@ -2730,7 +2730,7 @@ wire                    csreg_tagdp_l2_dir_map_on;  // From csreg of l5t_csreg_c
 wire                    csreg_misbuf_l2_dir_map_on;  // From csreg of l5t_csreg_ctl.sv
 wire                    csreg_filbuf_l2_dir_map_on;  // From csreg of l5t_csreg_ctl.sv
 
-wire [5:0]              csr_l2_steering_tid;        // From csr of l5t_csr_ctl.sv, BS hooraay SR 11/12/03 N2 Xbar Packet format 
+wire [5:0]              csr_l2_steering_tid;        // From csr of l5t_csr_ctl.sv, BS and SR 11/12/03 N2 Xbar Packet format 
 wire [27:0]             decc_lda_syndrome_c9;        // From decc of l5t_decc_dp.sv 
 wire [`TAG_WIDTH_LESS1:1]   tagd_lkup_tag_c1;            // From tagd of l5t_tagd_dp.sv 
 
@@ -2817,7 +2817,7 @@ wire                    oqu_rmo_st_c7;        // From oqu of l5t_oqu_ctl.sv
 wire [3:0]              oqu_rqtyp_rtn_c7;     // From oqu of l5t_oqu_ctl.sv 
 wire                    oqu_st_complete_c7;   // From oqu of l5t_oqu_ctl.sv 
 wire                    oqu_uerr_ack_c7;      // From oqu of l5t_oqu_ctl.sv 
-wire [5:0]              oque_tid_c8;            // From oque of l5t_oque_dp.sv, BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+wire [5:0]              oque_tid_c8;            // From oque of l5t_oque_dp.sv, BS and SR 11/12/03 N2 Xbar Packet format change 
 wire                    rdmat_or_rdmat_valid;         // From rdmat of l5t_rdmat_ctl.sv 
 wire [2:0]              oqu_out_mux1_sel_c7;        // From oqu of l5t_oqu_ctl.sv 
 wire [2:0]              oqu_out_mux2_sel_c7;        // From oqu of l5t_oqu_ctl.sv 
@@ -3009,7 +3009,7 @@ wire [4:0]              vuad_wr_addr_r0;             // From vuad of l5t_vuad_dp
 wire [4:0]              vuad_wr_addr_r1;             // From vuad of l5t_vuad_dp.sv 
 wire [4:0]              vuad_wr_addr_r2;             // From vuad of l5t_vuad_dp.sv 
 wire [4:0]              vuad_wr_addr_r3;             // From vuad of l5t_vuad_dp.sv 
-wire [4:0]              dirrep_wr_dc_dir_entry_c4;     // From dirrep of l5t_dirrep_ctl.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [4:0]              dirrep_wr_dc_dir_entry_c4;     // From dirrep of l5t_dirrep_ctl.sv, BS and SR 11/18/03 Reverse Directory change 
 wire                    vuad_wr_en_r0c0;             // From vuad of l5t_vuad_dp.sv 
 wire                    vuad_wr_en_r0c1;             // From vuad of l5t_vuad_dp.sv 
 wire                    vuad_wr_en_r1c0;             // From vuad of l5t_vuad_dp.sv 
@@ -3020,7 +3020,7 @@ wire                    vuad_wr_en_r3c0;             // From vuad of l5t_vuad_dp
 wire                    vuad_wr_en_r3c1;             // From vuad of l5t_vuad_dp.sv 
 //wire                    csreg_wr_enable_async_c9;     // From csreg of l5t_csreg_ctl.sv 
 wire                    csreg_wr_enable_tid_c9;       // From csreg of l5t_csreg_ctl.sv 
-wire [4:0]              dirrep_wr_ic_dir_entry_c4;     // From dirrep of l5t_dirrep_ctl.sv, BS hooraay SR 11/18/03 Reverse Directory change 
+wire [4:0]              dirrep_wr_ic_dir_entry_c4;     // From dirrep of l5t_dirrep_ctl.sv, BS and SR 11/18/03 Reverse Directory change 
 wire [6:0]              mb0_dcache_index_unused;
 wire [1:0]              mb0_dcache_way_unused;
 wire [7:0]              mb0_icache_index_unused;
@@ -3180,12 +3180,12 @@ l5t_vuad_ctl      vuad(
         .arbdec_arbdp_inst_mb_c2(arbdec_arbdp_inst_mb_c2), 
         .arb_vuadctl_no_bypass_px2(arb_vuadctl_no_bypass_px2),
   .mbist_run(mbist_run),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel0(vuad_usaloc_mux_used_hooraay_alloc_comb_sel0),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel1(vuad_usaloc_mux_used_hooraay_alloc_comb_sel1),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel2(vuad_usaloc_mux_used_hooraay_alloc_comb_sel2),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel3(vuad_usaloc_mux_used_hooraay_alloc_comb_sel3),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel4(vuad_usaloc_mux_used_hooraay_alloc_comb_sel4),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel5(vuad_usaloc_mux_used_hooraay_alloc_comb_sel5),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel0(vuad_usaloc_mux_used_and_alloc_comb_sel0),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel1(vuad_usaloc_mux_used_and_alloc_comb_sel1),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel2(vuad_usaloc_mux_used_and_alloc_comb_sel2),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel3(vuad_usaloc_mux_used_and_alloc_comb_sel3),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel4(vuad_usaloc_mux_used_and_alloc_comb_sel4),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel5(vuad_usaloc_mux_used_and_alloc_comb_sel5),
   .mux_valid_dirty_c1_sel0(mux_valid_dirty_c1_sel0),
   .mux_valid_dirty_c1_sel1(mux_valid_dirty_c1_sel1),
   .mux_valid_dirty_c1_sel2(mux_valid_dirty_c1_sel2)
@@ -3208,7 +3208,7 @@ l5t_vuadpm_dp		vuadpm(
                             .vuadpm_vuad_diag_data_c7(vuad_diag_data_c7[38:0]), 
                             .vuadpm_bistordiag_ua_data(vuadpm_bistordiag_ua_data[38:0]), 
                             .vuadpm_bistordiag_vd_data(vuadpm_bistordiag_vd_data[38:0]), 
-		     .vlddir_vd_synd_c2 (vlddir_vd_synd_c2[5:0]),//BShooraaySR VUAD ECC Change 8/9/04
+		     .vlddir_vd_synd_c2 (vlddir_vd_synd_c2[5:0]),//BSandSR VUAD ECC Change 8/9/04
 			.vlddir_vd_ce_c2(vlddir_vd_ce_c2[1]),
 			// New
    			    .usaloc_ua_synd_c9		(usaloc_ua_synd_c9[6:0]),
@@ -3245,9 +3245,9 @@ l5t_vlddir_dp		vlddir(
                      .vlddir_dirty_evict_c3     (vlddir_dirty_evict_c3), 
                      .vlddir_vuad_valid_c2   (vlddir_vuad_valid_c2[15:0]), 
                      .vlddir_diag_rd_vd_out     (vlddir_diag_rd_vd_out[38:0]), 
-		     .vlddir_vd_ue_c2	(vlddir_vd_ue_c2), // BS hooraay SR VUAD ECC Change 8/9/04
-		     .vlddir_vd_ce_c2	(vlddir_vd_ce_c2[1:0]), // BS hooraay SR VUAD ECC Change 8/9/04
-		     .vlddir_vd_synd_c2 (vlddir_vd_synd_c2[5:0]),//BShooraaySR VUAD ECC Change 8/9/04
+		     .vlddir_vd_ue_c2	(vlddir_vd_ue_c2), // BS and SR VUAD ECC Change 8/9/04
+		     .vlddir_vd_ce_c2	(vlddir_vd_ce_c2[1:0]), // BS and SR VUAD ECC Change 8/9/04
+		     .vlddir_vd_synd_c2 (vlddir_vd_synd_c2[5:0]),//BSandSR VUAD ECC Change 8/9/04
                     // Inputs 
 		     .arb_vuad_ce_err_c3 (usaloc_vlddir_arb_vuad_ce_err_c3_rep1_v1),
 		     .tag_hit_way_vld_c3(tag_hit_way_vld_c3_rep2[15:0]),
@@ -3285,9 +3285,9 @@ l5t_usaloc_dp		usaloc(
                      .usaloc_vuad_used_c2    (usaloc_vuad_used_c2[15:0]), 
                      .usaloc_vuad_alloc_c2   (usaloc_vuad_alloc_c2[15:0]), 
                      .usaloc_diag_rd_ua_out     (usaloc_diag_rd_ua_out[38:0]), 
-		     .usaloc_ua_ue_c2	(usaloc_ua_ue_c2), // BS hooraay SR VUAD ECC Change 8/9/04
-		     .usaloc_ua_ce_c2	(usaloc_ua_ce_c2), // BS hooraay SR VUAD ECC Change 8/9/04
-		     .usaloc_ua_synd_c2	(usaloc_ua_synd_c2[5:0]), //BS hooraay SR VUAD ECC Change
+		     .usaloc_ua_ue_c2	(usaloc_ua_ue_c2), // BS and SR VUAD ECC Change 8/9/04
+		     .usaloc_ua_ce_c2	(usaloc_ua_ce_c2), // BS and SR VUAD ECC Change 8/9/04
+		     .usaloc_ua_synd_c2	(usaloc_ua_synd_c2[5:0]), //BS and SR VUAD ECC Change
                     // Inputs 
 		.arb_vuad_ce_err_c3 (usaloc_vlddir_arb_vuad_ce_err_c3_rep1_v2),
 		.tag_hit_way_vld_c3(tag_hit_way_vld_c3_rep20[15:0]),
@@ -3311,12 +3311,12 @@ l5t_usaloc_dp		usaloc(
                     .filbuf_vuad_bypassed_c3(filbuf_vuad_bypassed_c3), 
                     .vuad_array_rd_data_c1(vuad_array_rd_data_c1[77:39]),
   .tcu_muxtest(tcu_muxtest),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel0(vuad_usaloc_mux_used_hooraay_alloc_comb_sel0),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel1(vuad_usaloc_mux_used_hooraay_alloc_comb_sel1),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel2(vuad_usaloc_mux_used_hooraay_alloc_comb_sel2),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel3(vuad_usaloc_mux_used_hooraay_alloc_comb_sel3),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel4(vuad_usaloc_mux_used_hooraay_alloc_comb_sel4),
-  .vuad_usaloc_mux_used_hooraay_alloc_comb_sel5(vuad_usaloc_mux_used_hooraay_alloc_comb_sel5)); 
+  .vuad_usaloc_mux_used_and_alloc_comb_sel0(vuad_usaloc_mux_used_and_alloc_comb_sel0),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel1(vuad_usaloc_mux_used_and_alloc_comb_sel1),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel2(vuad_usaloc_mux_used_and_alloc_comb_sel2),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel3(vuad_usaloc_mux_used_and_alloc_comb_sel3),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel4(vuad_usaloc_mux_used_and_alloc_comb_sel4),
+  .vuad_usaloc_mux_used_and_alloc_comb_sel5(vuad_usaloc_mux_used_and_alloc_comb_sel5)); 
  
  
 //////////////////////////// 
@@ -3518,7 +3518,7 @@ l5t_tagd_dp	tagd(
                                 .tcu_muxtest(tcu_muxtest),
 			.tcu_dectest(tcu_dectest),
                    .tagd_mbdata_inst_tecc_c8  (mbdata_inst_tecc_c8[5:0]), 
-                  .tagd_lkup_addr_c4   (tagd_lkup_addr_c4[17:9]), // BS hooraay SR 11/18/03 Reverse Directory change 
+                  .tagd_lkup_addr_c4   (tagd_lkup_addr_c4[17:9]), // BS and SR 11/18/03 Reverse Directory change 
                    
                   /*AUTOINST*/ 
                   // Outputs 
@@ -3675,10 +3675,10 @@ l5t_tag_ctl	tagctl (
 				.tcu_scan_en(tcu_scan_en),
 			.wmr_l		(wmr_l), 
                       // Outputs 
-                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS hooraay SR 12/22/03, store ack generation for diagnostic store
+                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS and SR 12/22/03, store ack generation for diagnostic store
 
-                      .tag_dir_l2way_sel_c4      (tag_dir_l2way_sel_c4), // BS hooraay SR 11/18/03 Reverse Directory change
-                      .tag_store_inst_c3	 (tag_store_inst_c3), //BS hooraay SR 11/07/03, store pipelining support 
+                      .tag_dir_l2way_sel_c4      (tag_dir_l2way_sel_c4), // BS and SR 11/18/03 Reverse Directory change
+                      .tag_store_inst_c3	 (tag_store_inst_c3), //BS and SR 11/07/03, store pipelining support 
                       .tag_hit_way_vld_c3(tag_hit_way_vld_c3[15:0]), 
                       .tag_st_to_data_array_c3(tag_st_to_data_array_c3), 
                       .tag_hit_l2orfb_c3(tag_hit_l2orfb_c3), 
@@ -3707,7 +3707,7 @@ l5t_tag_ctl	tagctl (
                       .tag_strst_ack_c5(tag_strst_ack_c5), 
                       .tag_st_ack_c5 (tag_st_ack_c5), 
                       .tag_st_req_c5 (tag_st_req_c5), 
-                      .tag_inval_req_c5(tag_inval_req_c5), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+                      .tag_inval_req_c5(tag_inval_req_c5), // BS and SR 11/12/03 N2 Xbar Packet format change
                       .tag_nonmem_comp_c6(tag_nonmem_comp_c6), 
                       .tag_uerr_ack_c5(tag_uerr_ack_c5), 
                       .tag_cerr_ack_c5(tag_cerr_ack_c5), 
@@ -3736,8 +3736,8 @@ l5t_tag_ctl	tagctl (
                       .arb_vuad_ce_err_c3 (tagctl_arb_vuad_ce_err_c3),
 		      .arb_upper_four_byte_access_c1(arb_upper_four_byte_access_c1), // BS 05/04/04 : taking out upper_four_byte_access info
                       .arb_lower_four_byte_access_c1(arb_lower_four_byte_access_c1), // BS 05/04/04 : taking out lower_four_byte_access info
-		      .misbuf_hit_st_dep_zero (misbuf_hit_st_dep_zero), // BS hooraay SR 11/07/03, store pipelining support
-		      .misbuf_arb_hit_c3(misbuf_arb_hit_c3), // BS hooraay SR 1/31/04
+		      .misbuf_hit_st_dep_zero (misbuf_hit_st_dep_zero), // BS and SR 11/07/03, store pipelining support
+		      .misbuf_arb_hit_c3(misbuf_arb_hit_c3), // BS and SR 1/31/04
                       .tag_way_sel_c2   (tag_way_sel_c2[15:0]), 
                        .vlddir_vuad_valid_c2 (vlddir_vuad_valid_c2_rep1[15:0]), 
                        .tagdp_lru_way_sel_c3   (tagdp_lru_way_sel_c3[15:0]), 
@@ -3795,7 +3795,7 @@ l5t_tag_ctl	tagctl (
                        .arb_wr8_inst_no_ctrue_c1(arb_wr8_inst_no_ctrue_c1), 
                       .filbuf_tag_hit_c2(filbuf_tag_hit_c2), 
 		  .filbuf_tag_hit_frm_mb_c2(filbuf_tag_tag_hit_frm_mb_c2_rep),
- 		      .filbuf_tag_evict_way_c3 (filbuf_tag_evict_way_c3_rep1[3:0]), // BS hooraay SR 12/18/03, LRU way from Filbuf needs to be written to Dir on a Miss
+ 		      .filbuf_tag_evict_way_c3 (filbuf_tag_evict_way_c3_rep1[3:0]), // BS and SR 12/18/03, LRU way from Filbuf needs to be written to Dir on a Miss
                        .filbuf_mcu_l5t_chunk_id_r1(filbuf_mcu_l5t_chunk_id_r1[1:0]), 
                        .filbuf_mcu_l5t_data_vld_r1(filbuf_mcu_l5t_data_vld_r1), 
                       .filbuf_dis_cerr_c3(filbuf_dis_cerr_c3_rep1), 
@@ -3848,8 +3848,8 @@ l5t_misbuf_ctl	misbuf (
                     .misbuf_mb_read_wl          (mb_read_wl[31:0]), 
                     .misbuf_mb_data_write_wl    (mb_data_write_wl[31:0]), 
                     .misbuf_mbdata_wr_en_c8     (mbdata_wr_en_c8), 
-                    .arb_decdp_ld_inst_c2   (arb_decdp_ld_inst_c2), // BS hooraay SR 11/07/03, store pipelining support
-                    .arb_decdp_imiss_inst_c2 (arb_decdp_imiss_inst_c2), // BS hooraay SR 11/07/03, store pipelining support
+                    .arb_decdp_ld_inst_c2   (arb_decdp_ld_inst_c2), // BS and SR 11/07/03, store pipelining support
+                    .arb_decdp_imiss_inst_c2 (arb_decdp_imiss_inst_c2), // BS and SR 11/07/03, store pipelining support
                    .mb_cam_match        (mb_cam_match[31:0]), 
                    .mb_cam_match_idx        (mb_cam_match_idx[31:0]), 
 		   .mb_mbist_cam_hit	(mb_mbist_cam_hit),
@@ -3858,7 +3858,7 @@ l5t_misbuf_ctl	misbuf (
 			/*AUTOINST*/ 
                    // Outputs 
                    .misbuf_vuad_ce_err_c8(misbuf_vuad_ce_err_c8),
-		   .misbuf_hit_st_dep_zero (misbuf_hit_st_dep_zero), // BS hooraay SR 11/07/03, store pipelining support
+		   .misbuf_hit_st_dep_zero (misbuf_hit_st_dep_zero), // BS and SR 11/07/03, store pipelining support
                    .misbuf_arb_cnt28_px2_prev(misbuf_arb_cnt28_px2_prev), 
                    .misbuf_arb_snp_cnt8_px1(misbuf_arb_snp_cnt8_px1), 
                    .misbuf_arb_vld_px1(misbuf_arb_vld_px1), 
@@ -3890,7 +3890,7 @@ l5t_misbuf_ctl	misbuf (
                    // Inputs 
 		   .arbdec_arbdp_inst_bufidhi_c8(arbdec_arbdp_inst_bufidhi_c8),
 		   .deccck_notdata_err_c8(deccck_notdata_err_c8),
-		   .tag_store_inst_c3         (tag_store_inst_c3), //BS hooraay SR 11/07/03, store pipelining support
+		   .tag_store_inst_c3         (tag_store_inst_c3), //BS and SR 11/07/03, store pipelining support
                    .tag_miss_unqual_c2(tag_miss_unqual_c2_rep1), 
                     .tag_hit_unqual_c2(tag_hit_unqual_c2), 
                    .tag_hit_c3       (tag_hit_c3), 
@@ -3982,7 +3982,7 @@ n2_l5t_dp_32x128_cust	mbdata(
                        // Inputs 
 		       .din		({mbdata_din[127:64],mbdata_inst_data_c8[63:0]}),
                      //.din           ({10'b0,arbdec_snpd_ecc_c8[6:0],misbuf_mbentry_c8[4:0],mbdata_inst_tecc_c8[5:0],misbuf_evict_c8,misbuf_dep_c8,misbuf_tecc_c8,4'b0,arbdp_inst_c8[`L2_POISON:`L2_SZ_LO],mbdata_inst_data_c8[63:0]}), // Templated 
-                // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+                // BS and SR 11/12/03 N2 Xbar Packet format change
                        .rd_wl           (mb_read_wl[31:0]),      // Templated 
                        .wr_wl           (mb_data_write_wl[31:0]), // Templated 
                        .read_en         (misbuf_buf_rd_en),       // Templated 
@@ -4152,7 +4152,7 @@ l5t_filbuf_ctl	filbuf(
  
 n2_com_cm_8x40_cust       fbtag   
 	( 
-	.dout(fb_read_data[39:0]), // BS hooraay SR 8 deep change 3/3/04
+	.dout(fb_read_data[39:0]), // BS and SR 8 deep change 3/3/04
         .match(fb_cam_match[7:0]), 
         .match_idx(fb_match_idx_unused[7:0]), 
         .adr_w(filbuf_fbtag_wr_ptr[7:0]), 
@@ -4190,7 +4190,7 @@ l5t_arbdat_dp	arbdat (
                             .arbdat_arbdata_wr_data_c2(arbdata_wr_data_c2[38:0]), 
                            // Outputs 
                        .tag_l2d_col_offset_c2(l5t_l2d_col_offset_c2[3:0]), 
-			    .st_ack_data(st_ack_data[63:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+			    .st_ack_data(st_ack_data[63:0]), // BS and SR 11/12/03 N2 Xbar Packet format change
                             .arbdat_arbdp_oque_int_ret_c7(arbdat_arbdp_oque_int_ret_c7[17:0]), 
                             .arbdat_arbdp_store_data_c2(l5t_l2d_stdecc_c2[77:0]), 
                             .arbdat_csr_inst_wr_data_c8(arbdat_csr_inst_wr_data_c8[63:0]), 
@@ -4198,7 +4198,7 @@ l5t_arbdat_dp	arbdat (
                             .arbdat_word_upper_cmp_c8(arbdat_word_upper_cmp_c8), 
                            // Inputs 
 			   .arbdec_arbdp_inst_bufidhi_c1(arbdec_arbdp_inst_bufidhi_c1),
-                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS hooraay SR 12/22/03, store ack generation for diagnostic store
+                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS and SR 12/22/03, store ack generation for diagnostic store
 
                             .ique_iq_arbdp_data_px2(ique_iq_arbdp_data_px2[63:0]), 
                             .snpd_snpq_arbdp_data_px2(snpd_snpq_arbdp_data_px2[63:0]), 
@@ -4264,7 +4264,7 @@ l5t_arbadr_dp	arbadr (
 			.arbadr_arbctl_ncu_l5t_pm_n_dist                 (arbadr_arbctl_ncu_l5t_pm_n_dist),
 
                             .arbadr_arbdp_addr87_c2(arbadr_arbdp_addr87_c2[1:0]), // BS 03/25/04 for partial bank/core modes support
-			    .arbadr_dirvec_addr3_c7(arbadr_dirvec_addr3_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+			    .arbadr_dirvec_addr3_c7(arbadr_dirvec_addr3_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
                                                                              // add3 for store ack including diagnostic stores
                             .arbadr_arbdp_tag_idx_px2(arbadr_arbdp_tag_idx_px2[8:0]), 
                             .arbadr_arbdp_vuad_idx1_px2(arbadr_arbdp_vuad_idx1_px2[8:0]), 
@@ -4298,7 +4298,7 @@ l5t_arbadr_dp	arbadr (
                             .arbadr_arbdp_rdmat_addr_c6(arbadr_arbdp_rdmat_addr_c6[5:2]), 
                             .arbadr_arbdp_waddr_c6(arbadr_arbdp_waddr_c6[1:0]), 
                             .arbadr_arbdp_word_addr_c6(arbadr_arbdp_word_addr_c6[4:0]), 
-                            .arbadr_arbdp_byte_addr_c6(arbadr_arbdp_byte_addr_c6[2:0]), // // Phase 2 : SIU inteface hooraay packet format change 2/7/04
+                            .arbadr_arbdp_byte_addr_c6(arbadr_arbdp_byte_addr_c6[2:0]), // // Phase 2 : SIU inteface and packet format change 2/7/04
                             .arbadr_arbdp_addr22_c7(arbadr_arbdp_addr22_c7), 
                             .arbadr_arbdp_csr_addr_c9(arbdp_csr_addr_c9[39:4]), 
                             .arbadr_rdmard_addr_c12(arbadr_rdmard_addr_c12[39:6]), 
@@ -4313,7 +4313,7 @@ l5t_arbadr_dp	arbadr (
                             .ncu_l5t_ba23(ncu_l5t_ba23), // BS 03/25/04 for partial bank/core modes support
                             .ncu_l5t_ba45(ncu_l5t_ba45), // BS 03/25/04 for partial bank/core modes support
                             .ncu_l5t_ba67(ncu_l5t_ba67), // BS 03/25/04 for partial bank/core modes support
-                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS hooraay SR 12/22/03, store ack generation for diagnostic store
+                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS and SR 12/22/03, store ack generation for diagnostic store
                             .ique_iq_arbdp_addr_px2(ique_iq_arbdp_addr_px2[39:0]), 
                             .snpd_snpq_arbdp_addr_px2(snpd_snpq_arbdp_addr_px2[39:0]), 
  			    .mbist_tag_lkup_addr	(mbist_tag_lkup_addr[27:0]),
@@ -4365,7 +4365,7 @@ l5t_arb_ctl	arb(
                 .arb_cpuid_c5          (arb_cpuid_c5[2:0]),
                      .arb_upper_four_byte_access_c1(arb_upper_four_byte_access_c1), // BS 05/04/04 : taking out upper_four_byte_access info
                      .arb_lower_four_byte_access_c1(arb_lower_four_byte_access_c1), // BS 05/04/04 : taking out lower_four_byte_access info
-		     .arb_decdp_mmuld_inst_c6(arb_decdp_mmuld_inst_c6), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+		     .arb_decdp_mmuld_inst_c6(arb_decdp_mmuld_inst_c6), // BS and SR 11/12/03 N2 Xbar Packet format change
                      .arb_acc_vd_c2  (arb_acc_vd_c2), 
                      .arb_acc_ua_c2  (arb_acc_ua_c2), 
                      .arb_oqu_swap_cas2_req_c2 (arb_oqu_swap_cas2_req_c2),
@@ -4563,7 +4563,7 @@ l5t_arb_ctl	arb(
                       .arbdat_word_lower_cmp_c8 (arbdat_word_lower_cmp_c8), 
                       .arbdat_word_upper_cmp_c8 (arbdat_word_upper_cmp_c8), 
                      .arbadr_addr2_c8(arbadr_addr2_c8), 
-                      .arbdec_arbdp_inst_size_c7(arbdec_arbdp_inst_size_c7[7:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                      .arbdec_arbdp_inst_size_c7(arbdec_arbdp_inst_size_c7[7:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
                       .arbadr_arbdp_diag_wr_way_c2(arbdp_diag_wr_way_c2[3:0]), 
                       .arbdec_arbdp_inst_way_c1 (arbdec_arbdp_inst_way_c1[3:0]), 
                       .arbdec_arbdp_tecc_c1     (arbdec_arbdp_tecc_c1), 
@@ -4662,17 +4662,17 @@ l5t_arbdec_dp	arbdec(
                           .arbdec_arbdp_cpuid_c2(arbdec_arbdp_cpuid_c2[2:0]),
                           .arbdec_arbdp_int_bcast_c5(arbdec_arbdp_int_bcast_c5), 
                           .arbdec_arbdp_inst_l1way_c7(arbdec_arbdp_inst_l1way_c7[1:0]), 
-                          .arbdec_arbdp_inst_size_c7(arbdec_arbdp_inst_size_c7[7:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
-                          .st_ack_bmask(st_ack_bmask[7:0]), // BS hooraay SR 1/30/04 Bmask for store ack including Diagnostic store ack
-                          .arbdec_arbdp_inst_tid_c7(arbdec_arbdp_inst_tid_c7[2:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                          .arbdec_arbdp_inst_size_c7(arbdec_arbdp_inst_size_c7[7:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
+                          .st_ack_bmask(st_ack_bmask[7:0]), // BS and SR 1/30/04 Bmask for store ack including Diagnostic store ack
+                          .arbdec_arbdp_inst_tid_c7(arbdec_arbdp_inst_tid_c7[2:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
                           .arbdec_arbdp_inst_cpuid_c7(arbdec_arbdp_inst_cpuid_c7[2:0]), 
                           .arbdec_arbdp_inst_nc_c7(arbdec_arbdp_inst_nc_c7), 
                          .arbdec_ctag_c6(arbdec_ctag_c6[31:0]),
                           .arbdec_size_field_c8 (arbdec_size_field_c8[1:0]), 
                          // Inputs 
-                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS hooraay SR 12/22/03, store ack generation for diagnostic store
+                      .sel_diag_store_data_c7   (sel_diag_store_data_c7), // BS and SR 12/22/03, store ack generation for diagnostic store
                           .snpd_snpq_arbdp_inst_px2(snpd_snpq_arbdp_inst_px2[`JBI_HDR_SZ_LESS1:0]), 
-                          .ique_iq_arbdp_inst_px2(ique_iq_arbdp_inst_px2[24:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format
+                          .ique_iq_arbdp_inst_px2(ique_iq_arbdp_inst_px2[24:0]), // BS and SR 11/12/03 N2 Xbar Packet format
                          //  BS & SR 11/04/03, MB grows to 32 
                         // .mb_data_read_data_low(mb_data_read_data[`MBD_POISON:`MBD_SZ_LO]),
                         // .mb_data_read_data_mid(mb_data_read_data[`MBD_EVICT:`MBD_TECC]),
@@ -4682,7 +4682,7 @@ l5t_arbdec_dp	arbdec(
                          .misbuf_arb_l2rd_en(misbuf_arb_l2rd_en), 
                          .filbuf_arbdp_entry_px2(filbuf_arbdp_entry_px2[2:0]), 
                          .filbuf_arbdp_tecc_px2(filbuf_arbdp_tecc_px2), 
-                          .csr_l2_steering_tid(csr_l2_steering_tid[5:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                          .csr_l2_steering_tid(csr_l2_steering_tid[5:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
                          .filbuf_arbdp_way_px2(filbuf_arbdp_way_px2[3:0]), 
                           .arb_mux1_mbsel_px2(arb_mux1_mbsel_px2), 
                           .arb_mux2_snpsel_px2(arb_arbdec_mux2_snpsel_px2), 
@@ -4702,7 +4702,7 @@ l5t_arbdec_dp	arbdec(
   .arbdec_snpd_ecc_c8(arbdec_snpd_ecc_c8[6:0]),
   .arbdec_pf_ice_inst_c1(arbdec_pf_ice_inst_c1),
   .arbdec_csr_ttype_c6(arbdec_csr_ttype_c6[4:0]),
-  .arbdec_csr_vcid_c6(arbdec_csr_vcid_c6[5:0])); // Phase 2 : SIU inteface hooraay packet format change 2/7/04
+  .arbdec_csr_vcid_c6(arbdec_csr_vcid_c6[5:0])); // Phase 2 : SIU inteface and packet format change 2/7/04
 
 
 l5t_wbufrpt_dp wbufrpt (
@@ -4789,7 +4789,7 @@ l5t_wbuf_ctl	wbuf(
  
 n2_com_cm_8x40_cust       wbtag   
 		( 
-		.dout(wb_read_data[39:0]), // BS hooraay SR 8 deep change 3/3/04
+		.dout(wb_read_data[39:0]), // BS and SR 8 deep change 3/3/04
                 .match(wb_cam_match_c2[7:0]), 
                 .match_idx(wb_match_idx_unused[7:0]), 
                 .adr_w(wbtag_write_wl_c4[7:0]), 
@@ -4822,14 +4822,14 @@ l5t_ique_dp	ique(
 				.tcu_clk_stop(1'b0),
 				.iqu_fail_reg(iqu_fail_reg),
 			.tcu_dectest(tcu_dectest),
-                 .iq_array_rd_data_c1   (iq_array_rd_data_c1[130:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                 .iq_array_rd_data_c1   (iq_array_rd_data_c1[130:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
 		.ique_arb_pf_ice_px2 (ique_arb_pf_ice_px2),
 		  /*AUTOINST*/ 
                  // Outputs 
                   .ique_pcx_l5t_data_103_px2  (ique_pcx_l5t_data_103_px2),
                   .ique_iq_arbdp_data_px2     (ique_iq_arbdp_data_px2[63:0]), 
                   .ique_iq_arbdp_addr_px2     (ique_iq_arbdp_addr_px2[39:0]), 
-                  .ique_iq_arbdp_inst_px2     (ique_iq_arbdp_inst_px2[24:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format
+                  .ique_iq_arbdp_inst_px2     (ique_iq_arbdp_inst_px2[24:0]), // BS and SR 11/12/03 N2 Xbar Packet format
                   .ique_iq_arb_atm_px2     (ique_iq_arb_atm_px2), 
                   .ique_iq_arb_csr_px2     (ique_iq_arb_csr_px2), 
                   .ique_iq_arb_st_px2      (ique_iq_arb_st_px2), 
@@ -4838,7 +4838,7 @@ l5t_ique_dp	ique(
                  .scan_in(ique_scanin),
                  .scan_out(ique_scanout),
                  .l2clk                  (l2clk), 
-             .pcx_l5t_data_px2    (pcx_l5t_data_px2[`PCX_WIDTH_LESS1:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+             .pcx_l5t_data_px2    (pcx_l5t_data_px2[`PCX_WIDTH_LESS1:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
                   .iqu_pcx_l5t_atm_px2_p   (iqu_pcx_l5t_atm_px2_p), 
                  .iqu_sel_pcx         (iqu_sel_pcx), 
                  .iqu_sel_c1          (iqu_sel_c1), 
@@ -4892,7 +4892,7 @@ n2_l5t_dp_16x160_cust    iqarray(
                      // Inputs 
 	.din ({29'b0,iqu_pcx_l5t_atm_px2_p,pcx_l5t_data_px2_fnl[`PCX_WIDTH_LESS1:104],
 		     ique_pcx_l5t_data_103_px2, pcx_l5t_data_px2_fnl[102:0]}), 
-          // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+          // BS and SR 11/12/03 N2 Xbar Packet format change 
 //        .din ({29'b0,iqu_pcx_l5t_atm_px2_p,pcx_l5t_data_px2[`PCX_WIDTH_LESS1:0]}),
         .tcu_pce_ov(ce_ovrd),
         .pce(1'b1),
@@ -4930,8 +4930,8 @@ l5t_oqu_ctl		oqu(
 			.wmr_l		(wmr_l), 
 		    /*AUTOINST*/ 
                     // Outputs 
-		    .sel_st_ack_c7    (sel_st_ack_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-		    .oqu_mmu_ld_hit_c7(oqu_mmu_ld_hit_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+		    .sel_st_ack_c7    (sel_st_ack_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
+		    .oqu_mmu_ld_hit_c7(oqu_mmu_ld_hit_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
                     .l5t_cpx_req_cq   (l5t_cpx_req_cq[7:0]), 
                     .l5t_cpx_atom_cq  (l5t_cpx_atom_cq), 
                     .oqu_diag_acc_c8  (oqu_diag_acc_c8), 
@@ -4980,8 +4980,8 @@ l5t_oqu_ctl		oqu(
                     .tag_cerr_ack_c5 (tag_cerr_ack_c5), 
                     .tag_int_ack_c5  (tag_int_ack_c5), 
                     .tag_st_req_c5   (tag_st_req_c5), 
-                    .tag_inval_req_c5(tag_inval_req_c5), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-                    .arb_decdp_mmuld_inst_c6(arb_decdp_mmuld_inst_c6), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+                    .tag_inval_req_c5(tag_inval_req_c5), // BS and SR 11/12/03 N2 Xbar Packet format change
+                    .arb_decdp_mmuld_inst_c6(arb_decdp_mmuld_inst_c6), // BS and SR 11/12/03 N2 Xbar Packet format change
                     .tag_fwd_req_ret_c5(tag_fwd_req_ret_c5), 
                      .tag_sel_rdma_inval_vec_c5(tag_sel_rdma_inval_vec_c5), 
                     .tag_rdma_wr_comp_c4(tag_rdma_wr_comp_c4), 
@@ -5010,7 +5010,7 @@ n2_l5t_dp_16x160_cust    oqarray(
                            // Outputs 
                            .dout        (oq_array_data_out[159:0]), 
                            // Inputs 
-                           .din         ({14'b0,oq_array_data_in[`CPX_WIDTH_LESS1:0]}), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                           .din         ({14'b0,oq_array_data_in[`CPX_WIDTH_LESS1:0]}), // BS and SR 11/12/03 N2 Xbar Packet format change 
                                 .tcu_pce_ov(ce_ovrd),
         		.pce(1'b1),
                        .tcu_aclk(aclk),
@@ -5049,13 +5049,13 @@ l5t_oque_dp		oque(
 		.mbist_oqarray_sel	(mbist_oqarray_sel[3:0]),
                 // Inputs 
                 .arbdec_arbdp_inst_l1way_c7 (arbdec_arbdp_inst_l1way_c7[1:0]), 
-                .arbdec_arbdp_inst_tid_c7   (arbdec_arbdp_inst_tid_c7[2:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
-                .arbdec_arbdp_l1way_c3   (arbdec_arbdp_l1way_c3[1:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
-		.oqu_mmu_ld_hit_c7       (oqu_mmu_ld_hit_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+                .arbdec_arbdp_inst_tid_c7   (arbdec_arbdp_inst_tid_c7[2:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
+                .arbdec_arbdp_l1way_c3   (arbdec_arbdp_l1way_c3[1:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
+		.oqu_mmu_ld_hit_c7       (oqu_mmu_ld_hit_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
                 .arbdec_arbdp_inst_nc_c7    (arbdec_arbdp_inst_nc_c7), 
                 .arbdec_arbdp_inst_cpuid_c7 (arbdec_arbdp_inst_cpuid_c7[2:0]), 
                 .oqu_rqtyp_rtn_c7  (oqu_rqtyp_rtn_c7[3:0]), 
-                .dirvec_dirdp_way_info_c7   (dirvec_dirdp_way_info_c7[3:0]), // BS hooraay SR 11/18/03 Support for 8 way I$
+                .dirvec_dirdp_way_info_c7   (dirvec_dirdp_way_info_c7[3:0]), // BS and SR 11/18/03 Support for 8 way I$
                 .oqu_strst_ack_c7        (oqu_strst_ack_c7), 
                 .arbdat_arbdp_oque_int_ret_c7(arbdat_arbdp_oque_int_ret_c7[17:0]), 
 		.csr_report_ldrc	(csr_report_ldrc),
@@ -5103,17 +5103,17 @@ l5t_dirvec_ctl		dirvec(
 	.tcu_clk_stop(1'b0),
         // Outputs 
         .dirvec_dirdp_req_vec_c6(dirvec_dirdp_req_vec_c6[7:0]), 
-        .dirvec_dirdp_way_info_c7(dirvec_dirdp_way_info_c7[3:0]), // BS hooraay SR 11/18/03 Support for 8 way I$
+        .dirvec_dirdp_way_info_c7(dirvec_dirdp_way_info_c7[3:0]), // BS and SR 11/18/03 Support for 8 way I$
         .dirvec_dirdp_inval_pckt_c7(dirvec_dirdp_inval_pckt_c7[111:0]), 
         // Inputs 
 			.arbadr_2bnk_true_enbld_dist		(arbadr_dirvec_2bnk_true_enbld_dist),
 			.arbadr_4bnk_true_enbld_dist              (arbadr_dirvec_4bnk_true_enbld_dist),
 			.arbadr_ncu_l5t_pm_n_dist                 (arbadr_dirvec_ncu_l5t_pm_n_dist),
-	    .sel_st_ack_c7(sel_st_ack_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
-            .arbadr_arbdp_line_addr_c7(arbadr_arbdp_line_addr_c7[5:4]), // BS hooraay SR 1/29/04 
-	    .st_ack_bmask(st_ack_bmask[7:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+	    .sel_st_ack_c7(sel_st_ack_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
+            .arbadr_arbdp_line_addr_c7(arbadr_arbdp_line_addr_c7[5:4]), // BS and SR 1/29/04 
+	    .st_ack_bmask(st_ack_bmask[7:0]), // BS and SR 11/12/03 N2 Xbar Packet format change
                                               // Bmask for store ack including Diagnostic store ack
-	    .arbadr_dirvec_addr3_c7(arbadr_dirvec_addr3_c7), // BS hooraay SR 11/12/03 N2 Xbar Packet format change
+	    .arbadr_dirvec_addr3_c7(arbadr_dirvec_addr3_c7), // BS and SR 11/12/03 N2 Xbar Packet format change
             .ic_cam_hit (ic_cam_hit[127:0]), 
             .dc_cam_hit (dc_cam_hit[127:0]), 
             .oqu_sel_mux1_c6(oqu_sel_mux1_c6[3:0]), 
@@ -5271,7 +5271,7 @@ l5t_csr_ctl	csr (
                .csr_vuad_l2off          (csr_vuad_l2off), 
                 .csr_l2_dir_map_on           (csr_l2_dir_map_on), 
                // .csr_l2_dbg_en               (csr_l2_dbg_en), 
-                .csr_l2_steering_tid         (csr_l2_steering_tid[5:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+                .csr_l2_steering_tid         (csr_l2_steering_tid[5:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
                 .csr_error_nceen             (csr_error_nceen), 
                 .csr_error_ceen              (csr_error_ceen), 
                .csr_wr_dirpinj_en       (csr_wr_dirpinj_en), 
@@ -5562,7 +5562,7 @@ l5t_evctag_dp	evctag(
  
 n2_com_cm_8x40_cust       rdmatag   
 		( 
-		.dout(rdma_read_data[39:0]), // BS hooraay SR 8 deep change 3/3/04
+		.dout(rdma_read_data[39:0]), // BS and SR 8 deep change 3/3/04
                 .match(rdmat_cam_match_c2[7:0]), 
                 .match_idx(rd_match_idx_unused[7:0]), 
                 .adr_w({4'b0, rdmat_wr_wl_s2[3:0]}), 
@@ -5639,7 +5639,7 @@ l5t_rdmat_ctl	 rdmat(
                            .rdmat_ev_cerr_r6   (rdmat_ev_cerr_r6), 
                           //.l5t_l2b_fbwr_wen_r2(l5t_l2b_fbwr_wen_r2[15:0]), 
                           //.l5t_l2b_fbd_stdatasel_c3(l5t_l2b_fbd_stdatasel_c3), 
-                          .l5t_l2b_ctag_c7(l5t_l2b_ctag_c7[31:0]), // Phase 2 : SIU inteface hooraay packet format change 2/7/04 
+                          .l5t_l2b_ctag_c7(l5t_l2b_ctag_c7[31:0]), // Phase 2 : SIU inteface and packet format change 2/7/04 
 
                           // Inputs 
                           .wbuf_reset_rdmat_vld(wbuf_reset_rdmat_vld[3:0]), 
@@ -5681,7 +5681,7 @@ l5t_rdmat_ctl	 rdmat(
 //        .tcu_clk_stop(tcu_clk_stop),
 //        .arbadr_arbdp_dbg_addr_c3  ({arbadr_dir_cam_addr_c3[33:8], arbdp_dbg_addr_c3[5:2]}), 
 //       // Outputs 
-//       .l5t_dbgbus_out   (l5t_dbgbus_out[41:0]), // BS hooraay SR 11/12/03 N2 Xbar Packet format change 
+//       .l5t_dbgbus_out   (l5t_dbgbus_out[41:0]), // BS and SR 11/12/03 N2 Xbar Packet format change 
 //       // Inputs 
 //        .csr_l2_dbg_en          (csr_l2_dbg_en), 
 //       .scan_in(dbg_scanin),
@@ -5720,7 +5720,7 @@ l5t_dirrep_ctl		dirrep(
                         .dirrep_dc_rdwr_panel_dec_c4(dirrep_dc_rdwr_panel_dec_c4[3:0]), 
                         .dirrep_dc_lkup_row_dec_c4(dirrep_dc_lkup_row_dec_c4[3:0]), 
                         .dirrep_dc_lkup_panel_dec_c4(dirrep_dc_lkup_panel_dec_c4[3:0]), 
-                        .dirrep_wr_dc_dir_entry_c4(dirrep_wr_dc_dir_entry_c4[4:0]), // BS hooraay SR 11/18/03 Reverse Directory change
+                        .dirrep_wr_dc_dir_entry_c4(dirrep_wr_dc_dir_entry_c4[4:0]), // BS and SR 11/18/03 Reverse Directory change
                         .dirrep_dc_dir_clear_c4 (dirrep_dc_dir_clear_c4), 
                         .dirrep_ic_rd_en_c4     (dirrep_ic_rd_en_c4), 
                         .dirrep_ic_wr_en_c4     (dirrep_ic_wr_en_c4), 
@@ -5729,7 +5729,7 @@ l5t_dirrep_ctl		dirrep(
                         .dirrep_ic_rdwr_panel_dec_c4(dirrep_ic_rdwr_panel_dec_c4[3:0]), 
                         .dirrep_ic_lkup_row_dec_c4(dirrep_ic_lkup_row_dec_c4[3:0]), 
                         .dirrep_ic_lkup_panel_dec_c4(dirrep_ic_lkup_panel_dec_c4[3:0]), 
-                        .dirrep_wr_ic_dir_entry_c4(dirrep_wr_ic_dir_entry_c4[4:0]),// BS hooraay SR 11/18/03 Reverse Directory change 
+                        .dirrep_wr_ic_dir_entry_c4(dirrep_wr_ic_dir_entry_c4[4:0]),// BS and SR 11/18/03 Reverse Directory change 
                         .dirrep_ic_dir_clear_c4 (dirrep_ic_dir_clear_c4), 
                         .dirrep_dir_error_c8    (dirrep_dir_error_c8), 
                         .arbadr_arbdp_addr4_c4    (arbadr_arbdp_addr4_c4), 
@@ -6425,10 +6425,10 @@ n2_com_cm_64x64_cust		ic_row0	(
          .l2clk             (l2clk), 
          // Outputs 
          .row_hit           (ic_cam_hit[63:0]),      
-         .rd_data0          (ic_rd_data04_row0[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change 
-         .rd_data1          (ic_rd_data15_row0[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change 
-         .rd_data2          (ic_rd_data26_row0[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change 
-         .rd_data3          (ic_rd_data37_row0[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change 
+         .rd_data0          (ic_rd_data04_row0[15:0]), // BS and SR 11/18/03 Reverse Directory change 
+         .rd_data1          (ic_rd_data15_row0[15:0]), // BS and SR 11/18/03 Reverse Directory change 
+         .rd_data2          (ic_rd_data26_row0[15:0]), // BS and SR 11/18/03 Reverse Directory change 
+         .rd_data3          (ic_rd_data37_row0[15:0]), // BS and SR 11/18/03 Reverse Directory change 
          // Inputs 
          .tcu_pce_ov	(ce_ovrd),
          .pce		(1'b1),
@@ -6444,10 +6444,10 @@ n2_com_cm_64x64_cust		ic_row0	(
          .inv_mask3         (ic_inv_mask_0145[7:0]), // Templated 
          .tcu_se_scancollar_in          (tcu_se_scancollar_in),                // Templated 
          .rd_en             (ic_rd_en_row0[3:0]),    // Templated 
-         .rw_addr0          (ic_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-         .rw_addr1          (ic_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-         .rw_addr2          (ic_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-         .rw_addr3          (ic_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+         .rw_addr0          (ic_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+         .rw_addr1          (ic_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+         .rw_addr2          (ic_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+         .rw_addr3          (ic_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
          .rst_warm_0        (ic_warm_rst_0145),      // Templated 
          .rst_warm_1        (ic_warm_rst_0145),      // Templated 
          .wr_en             (ic_wr_en_row0[3:0]),    // Templated 
@@ -6477,8 +6477,8 @@ l5t_dirout_dp	      out_col0	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(ic_cam_read_fail[0]),
 	.mbist_dc_ic_read_en		({ic_rd_en_row0[0],ic_rd_en_row2[0]}),
-        .rddata_out_c52_top(ic_rd_data04_row0[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change
-        .rddata_out_c52_bottom(ic_rd_data8c_row1[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change
+        .rddata_out_c52_top(ic_rd_data04_row0[15:0]), // BS and SR 11/18/03 Reverse Directory change
+        .rddata_out_c52_bottom(ic_rd_data8c_row1[15:0]), // BS and SR 11/18/03 Reverse Directory change
         .rd_data_sel_c52_top(ic_row0_select_panel0), // 
         .rd_data_sel_c52_bottom(ic_row1_select_panel0), // 
         .parity_vld_in(3'b0));             // 
@@ -6502,8 +6502,8 @@ l5t_dirout_dp	      out_col1	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(ic_cam_read_fail[1]),
 	.mbist_dc_ic_read_en		({ic_rd_en_row0[1],ic_rd_en_row2[1]}),
-        .rddata_out_c52_top(ic_rd_data15_row0[15:0]), // ,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(ic_rd_data9d_row1[15:0]), // BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(ic_rd_data15_row0[15:0]), // ,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(ic_rd_data9d_row1[15:0]), // BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(ic_row0_select_panel1), // 
         .rd_data_sel_c52_bottom(ic_row1_select_panel1), // 
         .parity_vld_in(3'b0));             // 
@@ -6527,8 +6527,8 @@ l5t_dirout_dp	      out_col2	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(ic_cam_read_fail[2]),
 	.mbist_dc_ic_read_en		({ic_rd_en_row0[2],ic_rd_en_row2[2]}),
-        .rddata_out_c52_top(ic_rd_data26_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(ic_rd_dataae_row1[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(ic_rd_data26_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(ic_rd_dataae_row1[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(ic_row0_select_panel2), // Templated 
         .rd_data_sel_c52_bottom(ic_row1_select_panel2), // Templated 
         .parity_vld_in(3'b0));             // Templated 
@@ -6552,8 +6552,8 @@ l5t_dirout_dp	      out_col3	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(ic_cam_read_fail[3]),
 	.mbist_dc_ic_read_en		({ic_rd_en_row0[3],ic_rd_en_row2[3]}),
-        .rddata_out_c52_top(ic_rd_data37_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(ic_rd_databf_row1[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(ic_rd_data37_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(ic_rd_databf_row1[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(ic_row0_select_panel3), // Templated 
         .rd_data_sel_c52_bottom(ic_row1_select_panel3), // Templated 
         .parity_vld_in(ic_parity_in[2:0])); // Templated 
@@ -6567,10 +6567,10 @@ n2_com_cm_64x64_cust		ic_row2	(
                      .l2clk             (l2clk), 
                      // Outputs 
                      .row_hit           (ic_cam_hit[127:64]),     // Templated 
-                     .rd_data0          (ic_rd_data8c_row1[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change
-                     .rd_data1          (ic_rd_data9d_row1[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data2          (ic_rd_dataae_row1[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data3          (ic_rd_databf_row1[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rd_data0          (ic_rd_data8c_row1[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change
+                     .rd_data1          (ic_rd_data9d_row1[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data2          (ic_rd_dataae_row1[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data3          (ic_rd_databf_row1[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
                      // Inputs 
                      .tcu_pce_ov(ce_ovrd),
                      .pce		(1'b1),
@@ -6586,10 +6586,10 @@ n2_com_cm_64x64_cust		ic_row2	(
                      .inv_mask3         (ic_inv_mask_89cd[7:0]), // Templated 
                      .tcu_se_scancollar_in          (tcu_se_scancollar_in),                // Templated 
                      .rd_en             (ic_rd_en_row2[3:0]),    // Templated 
-                     .rw_addr0          (ic_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr1          (ic_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr2          (ic_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr3          (ic_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rw_addr0          (ic_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr1          (ic_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr2          (ic_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr3          (ic_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
                      .rst_warm_0        (ic_warm_rst_89cd),      // Templated 
                      .rst_warm_1        (ic_warm_rst_89cd),      // Templated 
                      .wr_en             (ic_wr_en_row2[3:0]),    // Templated 
@@ -6614,10 +6614,10 @@ n2_com_cm_64x64_cust		dc_row0	(
 			/*AUTOINST*/ 
                      // Outputs 
                      .row_hit           (dc_cam_hit[63:0]),      // Templated 
-                     .rd_data0          (dc_rd_data04_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data1          (dc_rd_data15_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data2          (dc_rd_data26_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data3          (dc_rd_data37_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rd_data0          (dc_rd_data04_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data1          (dc_rd_data15_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data2          (dc_rd_data26_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data3          (dc_rd_data37_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
                     // Inputs 
                      .tcu_pce_ov	(ce_ovrd),
                      .pce		(1'b1),
@@ -6633,10 +6633,10 @@ n2_com_cm_64x64_cust		dc_row0	(
                      .inv_mask3         (dc_inv_mask_0145[7:0]), // Templated 
                      .tcu_se_scancollar_in          (tcu_se_scancollar_in),                // Templated 
                      .rd_en             (dc_rd_en_row0[3:0]),    // Templated 
-                     .rw_addr0          (dc_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr1          (dc_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr2          (dc_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr3          (dc_rw_addr_0145[5:0]),  // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rw_addr0          (dc_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr1          (dc_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr2          (dc_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr3          (dc_rw_addr_0145[5:0]),  // Templated,BS and SR 11/18/03 Reverse Directory change 
                      .rst_warm_0        (dc_warm_rst_0145),      // Templated 
                      .rst_warm_1        (dc_warm_rst_0145),      // Templated 
                      .wr_en             (dc_wr_en_row0[3:0]),    // Templated 
@@ -6668,8 +6668,8 @@ l5t_dirout_dp	      dc_out_col0	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(dc_cam_read_fail[0]),
 	.mbist_dc_ic_read_en		({dc_rd_en_row0[0],dc_rd_en_row2[0]}),
-          .rddata_out_c52_top(dc_rd_data04_row0[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-          .rddata_out_c52_bottom(dc_rd_data8c_row2[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
+          .rddata_out_c52_top(dc_rd_data04_row0[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+          .rddata_out_c52_bottom(dc_rd_data8c_row2[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
           .rd_data_sel_c52_top(dc_row0_select_panel0), // Templated 
           .rd_data_sel_c52_bottom(dc_row1_select_panel0), // Templated 
           .parity_vld_in(3'b0));           // Templated 
@@ -6693,8 +6693,8 @@ l5t_dirout_dp	      dc_out_col1	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(dc_cam_read_fail[1]),
 	.mbist_dc_ic_read_en		({dc_rd_en_row0[1],dc_rd_en_row2[1]}),
-        .rddata_out_c52_top(dc_rd_data15_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(dc_rd_data9d_row2[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(dc_rd_data15_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(dc_rd_data9d_row2[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(dc_row0_select_panel1), // Templated 
         .rd_data_sel_c52_bottom(dc_row1_select_panel1), // Templated 
         .parity_vld_in(3'b0));           // Templated 
@@ -6718,8 +6718,8 @@ l5t_dirout_dp	      dc_out_col2	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(dc_cam_read_fail[2]),
 	.mbist_dc_ic_read_en		({dc_rd_en_row0[2],dc_rd_en_row2[2]}),
-        .rddata_out_c52_top(dc_rd_data26_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(dc_rd_dataae_row2[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(dc_rd_data26_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(dc_rd_dataae_row2[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(dc_row0_select_panel2), // Templated 
         .rd_data_sel_c52_bottom(dc_row1_select_panel2), // Templated 
         .parity_vld_in(3'b0));           // Templated 
@@ -6744,8 +6744,8 @@ l5t_dirout_dp	      dc_out_col3	(
 	.l5t_mb0_run			(l5t_mb0_run),
 	.cam_read_fail			(dc_cam_read_fail[3]),
 	.mbist_dc_ic_read_en		({dc_rd_en_row0[3],dc_rd_en_row2[3]}),
-        .rddata_out_c52_top(dc_rd_data37_row0[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
-        .rddata_out_c52_bottom(dc_rd_databf_row2[15:0]), // Templated,BS hooraay SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_top(dc_rd_data37_row0[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
+        .rddata_out_c52_bottom(dc_rd_databf_row2[15:0]), // Templated,BS and SR 11/18/03 Reverse Directory change 
         .rd_data_sel_c52_top(dc_row0_select_panel3), // Templated 
         .rd_data_sel_c52_bottom(dc_row1_select_panel3), // Templated 
         .parity_vld_in(dc_parity_in[2:0])); // Templated 
@@ -6960,10 +6960,10 @@ n2_com_cm_64x64_cust	dc_row2	(
 			/*AUTOINST*/ 
                      // Outputs 
                      .row_hit           (dc_cam_hit[127:64]),     // Templated 
-                     .rd_data0          (dc_rd_data8c_row2[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data1          (dc_rd_data9d_row2[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data2          (dc_rd_dataae_row2[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rd_data3          (dc_rd_databf_row2[15:0]), // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rd_data0          (dc_rd_data8c_row2[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data1          (dc_rd_data9d_row2[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data2          (dc_rd_dataae_row2[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rd_data3          (dc_rd_databf_row2[15:0]), // Templated, BS and SR 11/18/03 Reverse Directory change 
                      // Inputs 
                      .tcu_pce_ov(ce_ovrd),
                      .pce		(1'b1),
@@ -6979,10 +6979,10 @@ n2_com_cm_64x64_cust	dc_row2	(
                      .inv_mask3         (dc_inv_mask_89cd[7:0]), // Templated 
                      .tcu_se_scancollar_in          (tcu_se_scancollar_in),                // Templated 
                      .rd_en             (dc_rd_en_row2[3:0]),    // Templated 
-                     .rw_addr0          (dc_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr1          (dc_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr2          (dc_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
-                     .rw_addr3          (dc_rw_addr_89cd[5:0]),  // Templated, BS hooraay SR 11/18/03 Reverse Directory change 
+                     .rw_addr0          (dc_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr1          (dc_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr2          (dc_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
+                     .rw_addr3          (dc_rw_addr_89cd[5:0]),  // Templated, BS and SR 11/18/03 Reverse Directory change 
                      .rst_warm_0        (dc_warm_rst_89cd),      // Templated 
                      .rst_warm_1        (dc_warm_rst_89cd),      // Templated 
                      .wr_en             (dc_wr_en_row2[3:0]),    // Templated 

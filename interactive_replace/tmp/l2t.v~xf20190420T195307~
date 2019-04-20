@@ -32,10 +32,10 @@
 // have any questions. 
 // 
 // ========== Copyright Header End ============================================
-`//include "libs/clk/rtl/clkgen_l5t_cmp.v"
-`//include "libs/clk/n2_clk_clstr_hdr_cust_l/n2_clk_clstr_hdr_cust/rtl/n2_clk_clstr_hdr_cust.v"
-`//include "libs/cl/cl_u1/cl_u1.v"
-`//include "libs/cl/cl_sc1/cl_sc1.v"
+`include "libs/clk/rtl/clkgen_l5t_cmp.v"
+`include "libs/clk/n2_clk_clstr_hdr_cust_l/n2_clk_clstr_hdr_cust/rtl/n2_clk_clstr_hdr_cust.v"
+`include "libs/cl/cl_u1/cl_u1.v"
+`include "libs/cl/cl_sc1/cl_sc1.v"
 `define SYSCLK_PERIOD   5000
 
 
