@@ -1,3 +1,5 @@
+#### This script is a work in progress. The current version doesn't work. 
+
 Interactivley do find and replace of certain strings in files with pre-set extensions.
 
 ### Updates

@@ -1,3 +1,1 @@
-# codeCat
-
-Scripts to automate things
+Scripts
